@@ -1,0 +1,36 @@
+@extends('layouts.admin')
+
+@section('content')
+<div class="p-20 shadow-lg rounded-lg">
+    <h1 class="text-2xl font-bold mb-4 ">Edit Jadwal Travel N0. {{ $travel->id_travel }}</h1>
+
+    <form action="{{ route('admin.travel.update', $travel->id_travel) }}" method="POST">
+        @csrf
+        @method('PUT')
+
+        <div class="mb-4">
+            <label class="block font-semibold">Rute</label>
+            <input type="text" name="tujuan" value="{{ $travel->tujuan }}" class="w-full p-2 border rounded" required>
+        </div>
+        
+        
+        <div class="mb-4">
+            <label class="block font-semibold">Waktu Berangkat</label>
+            <input type="datetime-local" name="tanggal_berangkat" value="{{ $travel->tanggal_berangkat }}" class="w-full p-2 border rounded" required>
+        </div>
+
+        <div class="mb-4">
+            <label class="block font-semibold">Harga</label>
+            <input type="number" name="harga" value="{{ $travel->harga_tiket }}" class="w-full p-2 border rounded" required>
+        </div>
+
+        <div class="mb-4">
+            <label class="block font-semibold">Kuota</label>
+            <input type="number" name="kuota" value="{{ $travel->kuota }}" class="w-full p-2 border rounded" required>
+        </div>
+
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
+    </form>
+</div>
+    
+@endsection
