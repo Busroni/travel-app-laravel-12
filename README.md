@@ -34,6 +34,7 @@ Autentikasi & Token
    Saat login, API akan mengembalikan token. Simpan token ini di LocalStorage agar bisa mengakses API yang dilindungi.
    - localStorage.setItem("auth_token", data.token);
 3️. Menggunakan Token untuk API
+  Gunakan token di Authorization Header saat mengambil data:
   fetch("/api/travel", {
   method: "GET",
   headers: {
@@ -41,5 +42,3 @@ Autentikasi & Token
     "Accept": "application/json"
     }
   })
-
-Gunakan token di Authorization Header saat mengambil data:
