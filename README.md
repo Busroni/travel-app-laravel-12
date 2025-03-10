@@ -42,3 +42,12 @@ Autentikasi & Token
     "Accept": "application/json"
     }
   })
+
+
+Framework: Laravel
+Database: PostgreSQL
+Autentikasi: Laravel Sanctum
+Template Engine: Laravel Blade
+Styling: Tailwind CSS
+JavaScript: Fetch API untuk komunikasi dengan backend
+LocalStorage: Menyimpan token autentikasi
