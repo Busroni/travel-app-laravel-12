@@ -1,14 +1,14 @@
-Web Travel - Fullstack Laravel
+# Web Travel - Fullstack Laravel
 
 Web Travel ini adalah aplikasi fullstack yang dibuat menggunakan Laravel sebagai backend dan Tailwind CSS untuk tampilan frontend. Database yang digunakan adalah PostgreSQL.
 
-Sebelum memulai setup, pastikan kamu sudah menginstal:
-PHP >= 8.1
-Composer
-Laravel
-PostgreSQL
+### Sebelum memulai setup, pastikan kamu sudah menginstal:
+- PHP >= 8.1
+- Composer
+- Laravel
+- PostgreSQL
 
-Cara Setup Project :
+### Cara Setup Project :
 1️. Clone Repository
 2. Install Dependencies Laravel
     -  composer install
@@ -44,10 +44,10 @@ Autentikasi & Token
   })
 
 
-Framework: Laravel
-Database: PostgreSQL
-Autentikasi: Laravel Sanctum
-Template Engine: Laravel Blade
-Styling: Tailwind CSS
-JavaScript: Fetch API untuk komunikasi dengan backend
-LocalStorage: Menyimpan token autentikasi
+- Framework: Laravel
+- Database: PostgreSQL
+- Autentikasi: Laravel Sanctum
+- Template Engine: Laravel Blade
+- Styling: Tailwind CSS
+- JavaScript: Fetch API untuk komunikasi dengan backend
+- LocalStorage: Menyimpan token autentikasi
