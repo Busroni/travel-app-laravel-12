@@ -54,7 +54,7 @@
                </button>
                <ul id="dropdown-pages" class="hidden py-2 space-y-2">
                    <li>
-                       <a href="{{ route('customer.travel') }}" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-slate-300  ">Travel List</a>
+                       <a href="{{ route('customer.travel') }}" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-slate-300  ">History Travel</a>
                    </li>
                    <li>
                        <a href="#" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-slate-300  ">Add Scedule Travel</a>

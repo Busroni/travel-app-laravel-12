@@ -5,7 +5,7 @@
     <h1 class="text-lg font-bold text-white">Selamat Datang di <span class="font-mono text-2xl">Traveler99</span> </h1>
     <h2 class="text-5xl mt-3 font-bold text-white py-10">Let's Explore The World</h2>
     <p class="text-white text-sm">Dapatkan pengalaman liburan yang istimewa dengan harga menarik dan layanan terbaik untuk memuaskan setiap perjalanan!</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 font-medium mt-3 md:mt-10  gap-1 bg-slate-400 mx-2 md:mx-20 my-3 rounded-lg border border-white bg-white/75 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
+    <div class="grid grid-cols-1 md:grid-cols-2 font-medium mt-3 md:mt-10  gap-1  mx-2 md:mx-20 my-3 rounded-lg border border-white bg-white/75 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
         <div class="p-3 border border-slate-200 rounded-lg">
             <div class="flex items-center justify-center space-x-2"><svg class="w-6 h-6 text-gray-100 dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z" clip-rule="evenodd"/>

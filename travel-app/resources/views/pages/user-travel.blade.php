@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mx-auto mt-10">
-    <h2 class="text-2xl font-bold text-slate-800">History Travel</h2>
+    <h2 class="text-2xl font-bold text-slate-800">Travel Yang Akan Datang</h2>
 
     <table class="mt-4 w-full border-collapse border border-slate-300">
         <thead>

@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             let card = `
                 <x-travel-card
+                    idTravel="${travel.id_travel}" 
                     hargaTiket="${travel.harga_tiket}" 
                     tujuan="${travel.tujuan}" 
                     tanggal="${formattedDate}"
