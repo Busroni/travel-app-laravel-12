@@ -4,6 +4,8 @@
 </head>
 <body class="bg-gray-100">
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  
 
     <header class="">
         <nav class="mx-auto bg-white flex max-w-fll shadow-lg fixed top-0 left-0 w-full h-16 z-50 items-center justify-between p-6 lg:px-8" aria-label="Global">
