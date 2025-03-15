@@ -12,20 +12,11 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const token = localStorage.getItem("auth_token");
-
-    console.log("Token dari LocalStorage:", token); // ✅ Debug token
-
-    if (!token) {
-        alert("Token tidak ditemukan! Harap login terlebih dahulu.");
-        window.location.href = "{{ route('login') }}";
-        return;
-    }
 
     fetch("{{ url('/api/travel') }}", {
         method: "GET",
         headers: {
-            "Authorization": "Bearer " + token,
+
             "Accept": "application/json"
         }
     })
