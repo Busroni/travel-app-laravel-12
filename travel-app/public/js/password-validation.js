@@ -36,7 +36,7 @@ $(document).ready(function() {
               data: formData,
               success: function(response) {
                   alert("Akun berhasil dibuat!");
-                  window.location.href = "{{ route('travel') }}";
+                  window.location.href = dashboardUrl;
               },
               error: function(xhr) {
                   let errors = xhr.responseJSON.errors;
