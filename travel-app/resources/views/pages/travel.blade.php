@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch("{{ url('/api/travel') }}", {
         method: "GET",
         headers: {
-
             "Accept": "application/json"
         }
     })
