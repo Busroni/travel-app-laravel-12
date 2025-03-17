@@ -15,11 +15,12 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::middleware(['auth:sanctum'])->post('/logout', [AuthController::class, 'logout'])->name('logout');
-
 Route::middleware('auth')->get('/history', [HistoryTravelController::class, 'userTravel']);
 
+
+Route::get('/travel', [TravelController::class, 'ApiIndex']); // GET Semua Travel
+
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/travel', [TravelController::class, 'ApiIndex']); // GET Semua Travel
     Route::post('/travel', [TravelController::class, 'store']); // POST Tambah Travel
     Route::get('/travel/{id}', [TravelController::class, 'show']); // GET Travel by ID
     Route::put('/travel/{id}', [TravelController::class, 'update']); // PUT Update Travel
