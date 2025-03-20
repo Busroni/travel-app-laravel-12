@@ -35,7 +35,7 @@
         @auth
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
-                <button type="submit" class="text-sm font-semibold hover:bg-red-300 p-2 rounded-lg text-gray-900">
+                <button type="submit" id="logout-btn" class="text-sm font-semibold hover:bg-red-300 p-2 rounded-lg text-gray-900">
                     Logout <span aria-hidden="true">&rarr;</span>
                 </button>
             </form>
@@ -66,7 +66,7 @@
     
     
     
-    
+      <script src="{{ asset('js/logout.js') }}"></script>
 <div class="container mx-auto mt-20">
         @yield('content')
     </div>
