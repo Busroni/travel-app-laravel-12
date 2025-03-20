@@ -31,12 +31,13 @@
                     Password
                 </label>
                 <div class="relative">
-                    <input type="password" autocomplete="off" name="password" class="w-full pl-3 pr-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-600 text-sm border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Your password" required />
+                    <input type="password" id="password" autocomplete="off" name="password" class="w-full pl-3 pr-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-600 text-sm border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Your password" required />
+                    <p id="password-length-message" class="text-sm mt-1"></p>
                 </div>
             </div>
         </div>
 
-        <button class="mt-4 w-full rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="submit">
+        <button id="submit-btn" class="mt-4 w-full rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="submit">
             Sign In
         </button>
 
@@ -49,38 +50,49 @@
     </form>
 </div>
 
+<script src="{{ asset('js/login-validation.js') }}"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let form = document.querySelector("form");
-    
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
-    
-            let formData = new FormData(this);
-    
-            fetch("{{ url('/login') }}", {
-                method: "POST",
-                headers: { "Accept": "application/json" },
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.token) {
-                    localStorage.setItem("auth_token", data.token); // ✅ Simpan token
-                    localStorage.setItem("role", data.role);
-    
-                    // Redirect berdasarkan role
-                    window.location.href = data.role === "admin" ? "{{ route('admin.dashboard') }}" : "{{ route('travel') }}";
-                } else {
-                    alert("Login gagal!");
-                }
-            })
-            .catch(error => {
-                console.error("Error saat login:", error);
-                alert("Terjadi kesalahan saat login.");
-            });
+   document.addEventListener("DOMContentLoaded", function() {
+    let form = document.querySelector("form");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        let formData = new FormData(this);
+
+        fetch("/login", {
+            method: "POST",
+            headers: { "Accept": "application/json" },
+            body: formData
+        })
+        .then(response => response.json().then(data => ({
+            status: response.status,
+            body: data
+        })))
+        .then(result => {
+            let { status, body } = result;
+
+            if (status === 200 && body.token) {
+                console.log("Login berhasil! Redirecting...");
+                localStorage.setItem("auth_token", body.token);
+                localStorage.setItem("role", body.role);
+                window.location.href = body.role === "admin" ? "/admin/dashboard" : "/travel";
+            } else if (status === 429) {  // ✅ Pastikan ini menangani kasus rate limit
+                console.warn("Terlalu banyak percobaan login:", body.message);
+                alert(body.message || "Terlalu banyak percobaan login. Coba lagi nanti!");
+            } else {
+                console.error("Login gagal:", body);
+                alert(body.message || "Login gagal! Periksa username dan password.");
+            }
+        })
+        .catch(error => {
+            console.error("Error saat login:", error);
+            alert("Terjadi kesalahan saat login.");
         });
     });
+});
+
+
+
     </script>
     
 

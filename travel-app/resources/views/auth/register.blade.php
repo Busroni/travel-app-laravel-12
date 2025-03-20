@@ -12,12 +12,12 @@
     </p>
 
     {{-- FORM REGISTER --}}
-    <form data-route="{{ route('register.submit') }} id="registerForm" method="POST" class="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+    <form data-route="{{ route('register.submit') }}" id="registerForm" method="POST" class="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
       @csrf
 
       <div class="mb-1 flex flex-col gap-6">
         {{-- NAME --}}
-        <div class="w-full max-w-sm min-w-[200px]">
+        <div class="w-full max-w-sm min-w-[200px] pb-10">
           <label class="block mb-2 text-sm text-slate-600">Your Name</label>
           <input type="text" id="name" name="name" required class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Your Name" />
           @error('name') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
@@ -59,7 +59,9 @@
     </form>
   </div>
 
-
+  <script>
+    var dashboardUrl = "{{ route('travel') }}";
+  </script>
   <script src="{{ asset('js/password-validation.js') }}"></script>
 
 @endsection
