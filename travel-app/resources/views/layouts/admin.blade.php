@@ -1,9 +1,12 @@
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body class="bg-gray-100">
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  
 
     <header class="">
         <nav class="mx-auto bg-white shadow-lg flex max-w-full fixed top-0 left-0 w-full h-16 z-50 items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -16,7 +19,7 @@
             @auth
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="text-sm font-semibold hover:bg-red-300 p-2 rounded-lg text-gray-900">
+                    <button type="submit" id="logout-btn" class="text-sm font-semibold hover:bg-red-300 p-2 rounded-lg text-gray-900">
                         Logout <span aria-hidden="true">&rarr;</span>
                     </button>
                 </form>
@@ -37,7 +40,7 @@
     </svg>
  </button>
  
- <aside id="default-sidebar" class="fixed font-medium top-16 left-0 z-40 w-64 h-[calc(100vh-4rem)] transition-transform -translate-x-full sm:translate-x-0 bg-white overflow-y-auto">
+ <aside id="default-sidebar" class="fixed shadow-xl font-medium top-16 left-0 z-40 w-64 h-[calc(100vh-4rem)] transition-transform -translate-x-full sm:translate-x-0 bg-white overflow-y-auto">
    <div class="overflow-y-auto py-5 px-3 h-full bg-white border-gray-200 dark:bg-gray-100">
        <ul class="space-y-2">
            <li>
@@ -73,9 +76,22 @@
                        </li>
                </ul>
            </li>
-           <li>
-                         
-        </li>
+           <li class="mt-20">
+                <a href="{{ route("admin.add") }}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-black hover:bg-slate-300 dark:hover:bg-gray-300 group">
+                    <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H7Zm8-1a1 1 0 0 1 1-1h1v-1a1 1 0 1 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0v-1h-1a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+                      </svg>
+                    <span class="ml-3">Add Account Admin</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('admin.password.edit') }}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-black hover:bg-slate-300 dark:hover:bg-gray-300 group">
+                 <svg class="w-6 h-6 text-gray-800 dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+                   </svg>                  
+                    <span class="ml-3">Ubah Password</span>
+                </a>
+            </li>
        </ul>
    </div>
  </aside>
@@ -91,6 +107,8 @@
     }, 3000); 
 </script>
 @endif
+
+<script src="{{ asset('js/logout.js') }}"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
