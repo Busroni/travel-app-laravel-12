@@ -1,13 +1,13 @@
 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
-        <img class="rounded-t-lg" src="https://i.pinimg.com/736x/d9/12/a3/d912a3c87e5356926879848d900b7b5d.jpg" alt="Traveler99" />
+        <img class="rounded-t-lg" src="https://i.pinimg.com/736x/e3/28/e0/e328e08cf1a6222f64f60c9e96cd1a6e.jpg" alt="Traveler99" />
     </a>
     <div class="p-5">
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Travel {{ $tujuan }}</h5>
         </a>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $tanggal }}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kursi tersedia: {{ $kuota }}</p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kuota Maksimal: {{ $kuota }}</p>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Harga: Rp{{ $hargaTiket }}</p>
         <a href="{{ route('customer.add-travel') }}" class="inline-flex bottom-0 items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Pesan Sekarang
